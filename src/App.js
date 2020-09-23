@@ -20,20 +20,27 @@ class App extends React.Component {
       <div>
         <h1>Identical Component</h1>
         <div className="column">
-          <div>
-            <IdenticalInput
-              inputValue={this.state.text}
-              handleTextInput={this.handleTextInput}
-            />
+          <div className="badge badge-primary m-2">
+            <h3>Box 1</h3>
+            {this.identicalComponent()}
           </div>
-          <div>
-            <IdenticalInput
-              inputValue={this.state.text}
-              handleTextInput={this.handleTextInput}
-            />
+          <div className="badge badge-primary m-2">
+            <h3>Box 2</h3>
+            {this.identicalComponent()}
           </div>
         </div>
       </div>
+    );
+  }
+
+  identicalComponent() {
+    return (
+      <span>
+        <IdenticalInput
+          inputValue={this.state.text}
+          handleTextInput={this.handleTextInput}
+        />
+      </span>
     );
   }
 }
